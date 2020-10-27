@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    tools:ignore="UnusedNavigation"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.genxmultiplexer.navigationarchitechture.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_main_to_userFragmentId"
+            app:destination="@id/userInterfaceFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/userInterfaceFragment"
+        android:name="com.genxmultiplexer.navigationarchitechture.UserInterfaceFragment"
+        android:label="fragment_user_interface"
+        tools:layout="@layout/fragment_user_interface" >
+        <action
+            android:id="@+id/action_userInterfaceFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

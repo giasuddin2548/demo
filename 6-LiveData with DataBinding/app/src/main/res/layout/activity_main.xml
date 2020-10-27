@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myViewModel"
+            type="com.genxmultiplexer.livedatawithdatabinding.ViewModelClass" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textViewCountViewId"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="@{String.valueOf(myViewModel.countData)}" />
+
+        <Button
+            android:onClick="@{()-> myViewModel.countUpdate()}"
+            android:id="@+id/buttonCounterClickId"
+            android:text="Count"
+            android:textAllCaps="false"
+            android:layout_margin="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="80dp">
+
+        </Button>
+
+    </RelativeLayout>
+
+
+</layout>
